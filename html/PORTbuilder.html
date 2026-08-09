@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/Portfocivi/SPCK-JSB14-QUANGMINH/css/port.css">
+</head>
+<body>
+    <div class="app">
+ 
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <div class="brand">
+            <div class="brand-mark">P</div>
+            <input class="doc-title" id="docTitle" value="Portfolio của tôi">
+            </div>
+            <div class="topbar-mid"></div>
+            <div class="topbar-right">
+            <button class="tb-icon-btn" id="btnUndo" title="Hoàn tác (Ctrl+Z)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14 4 9l5-5M4 9h10a6 6 0 0 1 0 12h-2"/></svg></button>
+            <button class="tb-icon-btn" id="btnRedo" title="Làm lại (Ctrl+Y)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 14l5-5-5-5M20 9H10a6 6 0 0 0 0 12h2"/></svg></button>
+            <div class="zoom-mini">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                <input type="range" id="zoomRange" min="40" max="150" value="85">
+                <span id="zoomVal">85%</span>
+            </div>
+            <div class="dropdown-wrap">
+                <button class="btn btn-ghost" id="btnExportToggle">Xuất tệp ▾</button>
+                <div class="menu hidden" id="exportMenu">
+                <button id="expPng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Ảnh PNG (trang hiện tại)</button>
+                <button id="expPdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>In / Lưu PDF (tất cả trang)</button>
+                <button id="expJson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>Xuất JSON (lưu tiến độ)</button>
+                <label class="menu-import" style="display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:7px;font-size:12.8px;cursor:pointer;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 21V9m0 0 4 4m-4-4-4 4M4 3h16"/></svg>Nhập JSON<input type="file" id="importJson" accept="application/json" style="display:none;"></label>
+                </div>
+            </div>
+            <button class="btn btn-present" id="btnPresent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="6 3 20 12 6 21 6 3"/></svg>Trình chiếu</button>
+            </div>
+        </div>
+        
+        <!-- CONTEXT BAR (changes based on selection) -->
+        <div class="contextbar" id="contextbar"></div>
+        
+        <!-- BODY -->
+        <div class="body-area">
+            <div class="icon-rail" id="iconRail">
+            <button class="rail-tab" data-tab="elements"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><circle cx="17.5" cy="6.5" r="3.5"/><path d="M3 21l6-8 5 6 3-4 4 6"/></svg>Yếu tố</button>
+            <button class="rail-tab" data-tab="text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5h14M12 5v14"/></svg>Văn bản</button>
+            <button class="rail-tab" data-tab="uploads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg>Ảnh</button>
+            <button class="rail-tab" data-tab="templates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/></svg>Mẫu</button>
+            <button class="rail-tab" data-tab="design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.3" fill="currentColor" stroke="none"/><circle cx="13" cy="8" r="1.3" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>Thiết kế</button>
+            </div>
+        
+            <div class="side-panel" id="sidePanel"><div class="sp-inner" id="spInner"></div></div>
+        
+            <div class="canvas-wrap" id="canvasWrap">
+            <div class="zoom-holder" id="zoomHolder">
+                <div class="slide-canvas" id="slideCanvas"></div>
+            </div>
+            </div>
+        
+            <!-- <div class="right-panel" id="rightPanel"><div class="rp-inner" id="rpInner"></div></div> -->
+        </div>
+        
+        <!-- FILMSTRIP -->
+        <div class="filmstrip-bar">
+            <div class="fs-slides" id="fsSlides"></div>
+            <button class="fs-add" id="fsAdd" title="Thêm trang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button>
+        </div>
+        </div>
+        
+        <!-- PRESENT MODE -->
+        <div class="present-overlay hidden" id="presentOverlay">
+        <div class="present-slide-holder" id="presentSlideHolder"></div>
+        <div class="present-nav left" id="navLeft"></div>
+        <div class="present-nav right" id="navRight"></div>
+        <button class="present-exit" id="presentExit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <div class="present-dots" id="presentDots"></div>
+        </div>
+    
+    <input type="file" id="imgFileInput" accept="image/*" style="display:none;">
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

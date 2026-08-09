@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/Portfocivi/SPCK-JSB14-QUANGMINH/css/cv.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="app">
+ 
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <div class="brand">
+            
+            <div>
+                <div class="brand-name">Portfocivi</div>
+                <div class="brand-sub">Soạn CV như Word, xuất file như dân chuyên nghiệp</div>
+            </div>
+            </div>
+            <div class="topbar-actions">
+            <div class="status-pill"><span class="status-dot" id="statusDot"></span><span id="statusText">Đã lưu trong phiên</span></div>
+            <!-- <button class="btn" id="btnUndo" title="Hoàn tác (Ctrl+Z)">↶ Undo</button>
+            <button class="btn" id="btnRedo" title="Làm lại (Ctrl+Y)">↷ Redo</button>
+            <label class="btn" for="importInput">⭱ Nhập JSON</label>
+            <input type="file" id="importInput" accept="application/json">
+            <button class="btn" id="btnExportJson">⭳ Xuất JSON</button> -->
+            <button class="btn" id="btnToggleRight"><i class="fa-solid fa-gear" style="color: rgb(27, 36, 48);"></i> Tuỳ chỉnh</button>
+            <button class="btn btn-primary" id="btnPrint"><i class="fa-regular fa-file-pdf" style="color: rgb(255,255,255);"></i> Xuất PDF / In</button>
+            </div>
+        </div>
+        
+        <!-- RIBBON -->
+        <div class="ribbon">
+            <div class="ribbon-group">
+            <div class="ribbon-row">
+                <select class="rsel font" id="fontSelect" title="Phông chữ">
+                <option value="Inter">Inter</option>
+                <option value="Fraunces">Fraunces (serif)</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Arial">Arial</option>
+                <option value="'Times New Roman'">Times New Roman</option>
+                <option value="'JetBrains Mono'">JetBrains Mono</option>
+                </select>
+                <select class="rsel size" id="sizeSelect" title="Cỡ chữ">
+                <option>10</option><option>11</option><option selected>12</option><option>13</option>
+                <option>14</option><option>16</option><option>18</option><option>22</option><option>28</option>
+                </select>
+            </div>
+            <div class="ribbon-label">Phông chữ</div>
+            </div>
+        
+            <div class="divider-v"></div>
+        
+            <div class="ribbon-group">
+            <div class="ribbon-row">
+                <button class="rbtn" data-cmd="bold" title="Đậm (Ctrl+B)"><i class="fa-solid fa-bold" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="italic" title="Nghiêng (Ctrl+I)"><i class="fa-solid fa-italic" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="underline" title="Gạch chân (Ctrl+U)"><i class="fa-solid fa-underline" style="color: rgb(27, 36, 48);"></i></button>
+            </div>
+            <div class="ribbon-label">Định dạng</div>
+            </div>
+        
+            <div class="divider-v"></div>
+        
+            <div class="ribbon-group">
+            <div class="ribbon-row">
+                <div class="color-swatch" title="Màu chữ"><input type="color" id="textColor" value="#1b2430"><div class="color-bar" id="textColorBar"></div></div>
+                <div class="color-swatch" title="Màu tô sáng"><input type="color" id="hiliteColor" value="#fff2ac"><div class="color-bar" id="hiliteColorBar" style="background:#fff2ac"></div></div>
+            </div>
+            <div class="ribbon-label">Màu sắc</div>
+            </div>
+        
+            <div class="divider-v"></div>
+        
+            <div class="ribbon-group">
+            <div class="ribbon-row">
+                <button class="rbtn" data-cmd="justifyLeft" title="Căn trái"><i class="fa-solid fa-align-left" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="justifyCenter" title="Căn giữa"><i class="fa-solid fa-align-center" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="justifyRight" title="Căn phải"><i class="fa-solid fa-align-right" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="justifyFull" title="Căn đều"><i class="fa-solid fa-align-justify" style="color: rgb(27, 36, 48);"></i></button>
+            </div>
+            <div class="ribbon-label">Căn lề</div>
+            </div>
+        
+            <div class="divider-v"></div>
+        
+            <div class="ribbon-group">
+            <div class="ribbon-row">
+                <button class="rbtn" data-cmd="insertUnorderedList" title="Danh sách chấm"><i class="fa-solid fa-list-ul" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="insertOrderedList" title="Danh sách số"><i class="fa-solid fa-list-ol" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="outdent" title="Giảm thụt lề"><i class="fa-solid fa-outdent" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="indent" title="Tăng thụt lề"><i class="fa-solid fa-indent" style="color: rgb(27, 36, 48);"></i></button>
+            </div>
+            <div class="ribbon-label">Danh sách</div>
+            </div>
+        
+            <div class="divider-v"></div>
+        
+            <div class="ribbon-group">
+            <div class="ribbon-row">
+                <button class="rbtn" data-cmd="createLink" title="Chèn liên kết"><i class="fa-solid fa-link" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="insertHorizontalRule" title="Chèn đường kẻ"><i class="fa-solid fa-grip-lines" style="color: rgb(27, 36, 48);"></i></button>
+                <button class="rbtn" data-cmd="removeFormat" title="Xoá định dạng"><i class="fa-solid fa-text-slash" style="color: rgb(27, 36, 48);"></i></button>
+            </div>
+            <div class="ribbon-label">Chèn / khác</div>
+            </div>
+        </div>
+        
+        <!-- BODY -->
+        <div class="body-area">
+            <!-- LEFT RAIL -->
+            <div class="rail">
+            <h3>Bố cục CV</h3>
+            <div class="section-list" id="sectionList"></div>
+            <select class="add-section-select" id="addSectionSelect">
+                <option value="">+ Thêm mục mới…</option>
+            </select>
+        
+            <div class="rail-block">
+                <h3>Bảng màu</h3>
+                <div class="swatches" id="themeSwatches"></div>
+            </div>
+        
+            <div class="rail-block">
+                <h3>Bố cục trang</h3>
+                <div class="layout-opts" id="layoutOpts">
+                <div class="layout-opt active" data-layout="single">
+                    <svg viewBox="0 0 60 34"><rect x="4" y="4" width="52" height="26" rx="2" fill="#EEF1F5" stroke="#D8DEE8"/><rect x="9" y="9" width="42" height="4" fill="#3457D5"/><rect x="9" y="16" width="42" height="2" fill="#B7BFCC"/><rect x="9" y="20" width="30" height="2" fill="#B7BFCC"/></svg>
+                    Một cột
+                </div>
+                <div class="layout-opt" data-layout="sidebar">
+                    <svg viewBox="0 0 60 34"><rect x="4" y="4" width="52" height="26" rx="2" fill="#EEF1F5" stroke="#D8DEE8"/><rect x="4" y="4" width="16" height="26" fill="#1B2430"/><rect x="24" y="9" width="28" height="4" fill="#3457D5"/><rect x="24" y="16" width="28" height="2" fill="#B7BFCC"/></svg>
+                    Có sidebar
+                </div>
+                </div>
+            </div>
+        
+            <div class="rail-block">
+                <h3>Thu phóng trang</h3>
+                <div class="zoom-row">
+                <input type="range" id="zoomRange" min="50" max="130" value="92">
+                <span class="zoom-val" id="zoomVal">92%</span>
+                </div>
+            </div>
+            </div>
+        
+            <!-- CANVAS -->
+            <div class="canvas-wrap">
+            <div class="page-shadow-holder" id="zoomHolder">
+                <div class="page" id="page">
+                <!-- populated by JS -->
+                </div>
+            </div>
+            </div>
+        
+            <!-- RIGHT PANEL -->
+            <div class="right-panel" id="rightPanel">
+            <div class="right-panel-inner">
+                <h3 style="font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);margin:4px 0 12px;font-weight:700;">Thống kê tài liệu</h3>
+                <div class="metric-row"><span>Số từ</span><b id="mWords">0</b></div>
+                <div class="metric-row"><span>Số ký tự</span><b id="mChars">0</b></div>
+                <div class="metric-row"><span>Số mục CV</span><b id="mSections">0</b></div>
+                <div class="metric-row"><span>Ước tính số trang</span><b id="mPages">1</b></div>
+        
+                <h3 style="font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);margin:20px 0 12px;font-weight:700;">Mẹo cho CV tốt</h3>
+                <div class="tip">✔ Giữ CV trong 1 trang nếu &lt;5 năm kinh nghiệm.</div>
+                <div class="tip">✔ Dùng động từ hành động: "phát triển", "dẫn dắt", "tối ưu".</div>
+                <div class="tip">✔ Ưu tiên số liệu cụ thể trong phần kinh nghiệm.</div>
+                <div class="tip">✔ Xuất JSON thường xuyên để không mất dữ liệu — trang này không tự lưu giữa các lần tải lại.</div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

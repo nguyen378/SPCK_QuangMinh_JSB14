@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Portfocivi/SPCK-JSB14-QUANGMINH/css/cv_builder.css">
+</head>
+
+<body>
+    <div class="cv">
+        <!-- topbar -->
+        <div class="fixed z-50 top-bar w-full h-[50px] inline-flex justify-between align-middle">
+            <div class="brand h-auto inline-block">
+                <h1 class="brand-title">Portfocivi</h1>
+                <p class="subtitle">Soạn CV như Word, xuất file như dân chuyên nghiệp</p>
+            </div>
+            <div class="inline-flex align-middle justify-center">
+                <i class="fa-solid fa-magnifying-glass" style="color: rgb(200, 200, 200);"></i>
+                <input class="search" type="text" placeholder="search">
+            </div>
+            <div class="user inline-flex justify-center align-middle h-auto ml-[100px]">
+                <div class="name">Username</div>
+                <div class="icon"><i class="fa-solid fa-xl fa-circle-user" style="color: rgb(27, 36, 48);"></i></div>
+            </div>
+        </div>
+
+        <!-- toolbar -->
+        <div class="fixed z-50 top-[50px] toolbar w-full h-[33px] inline-flex align-middle">
+            <div class="page_list inline-flex justify-start align-middle">
+                <ul class="tool_list inline-flex align-middle">
+                    <li class="page inline-flex align-middle">Home</li>
+                    <li class="page inline-flex align-middle">Insert</li>
+                    <li class="page inline-flex align-middle">View</li>
+                    <li class="page inline-flex align-middle">Help</li>
+                </ul>
+            </div>
+
+            <div class="toolbar_list w-full inline-flex justify-end align-middle">
+                <ul class="tool_list inline-flex align-middle">
+                    <li class="inline-flex align-middle">
+                        <button class="btn" id="btnToggleRight"><i class="fa-solid fa-download" style="color: rgb(27, 36, 48);"></i> Tải xuống</button>
+                    </li>
+                    <li class="inline-flex align-middle">
+                        <button class="btn" id="btnToggleRight"><i class="fa-solid fa-floppy-disk" style="color: rgb(27, 36, 48);"></i> Lưu CV</button>
+                    </li>
+                    <li class="inline-flex align-middle">
+                        <button class="btn" id="btnToggleRight"><i class="fa-solid fa-pencil" style="color: rgb(27, 36, 48);"></i> Tuỳ chỉnh</button>
+                    </li>
+                    <li class="inline-flex align-middle">
+                        <button class="btn" id="btnToggleRight"><i class="fa-solid fa-gear" style="color: rgb(27, 36, 48);"></i> Cài đặt</button>
+                    </li>
+                    <li class="inline-flex align-middle">
+                        <button class="btn btn-primary" id="btnPrint"><i class="fa-solid fa-share" style="color: rgb(255,255,255);"></i> Chia sẻ</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- toollist -->
+        <div class="fixed z-50 top-[83px] toollist w-full h-[80px] inline-flex align-middle">
+            <div class="font-editing w-auto align-middle">
+                <div class="font- inline-flex align-middle">
+                    <select class="font w-full cursor-pointer" id="fontSelect" title="Phông chữ">
+                        <option value="Inter">Inter</option>
+                        <option value="Fraunces">Fraunces (serif)</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Arial">Arial</option>
+                        <option value="'Times New Roman'">Times New Roman</option>
+                        <option value="'JetBrains Mono'">JetBrains Mono</option>
+                    </select>
+                    <select class="font-size cursor-pointer" id="sizeSelect" title="Cỡ chữ">
+                        <option>10</option><option>11</option><option selected>12</option><option>13</option>
+                        <option>14</option><option>16</option><option>18</option><option>22</option><option>28</option>
+                    </select>
+                </div>
+
+                <div class="decoration align-middle">
+                    <div class="type inline-flex align-middle">
+                        <button title="in đậm" class="mr-1 ml-1 h-[20px] bold"><i class="fa-solid fa-bold" style="color: rgb(27, 36, 48);"></i></button>
+                        <button title="in nghiêng" class="mr-1 ml-1 h-[20px] italic"><i class="fa-solid fa-italic" style="color: rgb(27, 36, 48);"></i></button>
+                        <button title="gạch chân" class="mr-1 ml-1 h-[20px] underline"><i class="fa-solid fa-underline" style="color: rgb(27, 36, 48);"></i></button>
+                        <button title="gạch chữ" class="mr-1 ml-1 h-[20px] strikethrough"><i class="fa-solid fa-strikethrough" style="color: rgb(27, 36, 48);"></i></button>
+                        <button title="chữ hoa" class="mr-1 ml-1 h-[20px] uppercase"><i class="fa-solid fa-a" style="color: rgb(27, 36, 48);"></i></button>
+                    </div>
+                    <div class="color inline-flex align-middle">
+                        <label title="màu chữ" id="fontColor" class="color-picker-btn-font" for="fontColorInput" style="background-color: #ff0000;"></label>
+                        <input title="màu chữ" type="color" id="fontColorInput" value="#ff0000" style="display: none;">
+                        <label title="màu highlight" id="highlight" class="color-picker-btn-highlight" for="highlightInput" style="background-color: #ff0000;"></label>
+                        <input title="màu highlight" type="color" id="highlightInput" value="#ff0000" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="ribbon-label">Chữ</div>
+            </div>
+
+            <div class="paragraph w-auto align-middle">
+                <div class="list inline-flex align-middle">
+                    <button title="gạch đầu dòng" class="mr-1.5 ml-1.5 bullets"><i class="fa-solid fa-list-ul" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="đánh số" class="mr-1.5 ml-1.5 numbering"><i class="fa-solid fa-list-ol" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="đánh dấu" class="mr-1.5 ml-1.5 checklist"><i class="fa-solid fa-list-check" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="thụt đoạn" class="mr-1.5 ml-1.5 in-indent"><i class="fa-solid fa-indent" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="cách đoạn" class="mr-1.5 ml-1.5 de-indent"><i class="fa-solid fa-outdent" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="lên" class="mr-1.5 ml-1.5 up"><i class="fa-solid fa-arrow-down" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="xuống" class="mr-1.5 ml-1.5 down"><i class="fa-solid fa-arrow-up" style="color: rgb(27, 36, 48);"></i></button>
+                </div>
+
+                <div class="para align-middle mt-1.5">
+                    <button title="căn trái" class="mr-1 ml-1 left"><i class="fa-solid fa-align-left" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="căn giữa" class="mr-1 ml-1 center"><i class="fa-solid fa-align-center" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="căn phải" class="mr-1 ml-1 right"><i class="fa-solid fa-align-right" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="căn chỉnh" class="mr-1 ml-1 justify"><i class="fa-solid fa-align-justify" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="phân đoạn" class="mr-1 ml-1 section"><i class="fa-solid fa-section" style="color: rgb(27, 36, 48);"></i></button>
+                    <button title="textbox" class="mr-1 ml-1 textbox"><i class="fa-regular fa-square" style="color: rgb(27, 36, 48);"></i></button>
+                    <div class="color inline-flex align-middle">
+                        <label title="màu đoạn văn" class="color-picker-btn" for="favcolor" style="background-color: #ff0000;"></label>
+                        <input title="màu đoạn văn" type="color" id="favcolor" value="#ff0000" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="ribbon-label">Đoạn văn</div>
+            </div>
+
+            <div class="table w-auto align-middle pl-[10px] pr-[10px]">
+                <div class="font- inline-flex align-middle">
+                    <select class="border w-full" id="sizeSelect" title="Cỡ chữ">
+                        <option>Border</option>
+                        <option>Border-none</option>
+                    </select>
+                </div>
+
+                <div class="table-tool align-middle">
+                    <div class="table-tool inline-flex align-middle">
+                        <button title="tạo bảng" class="mr-1 ml-1 table-table"><i class="fa-solid fa-table" style="color: rgb(27, 36, 48);"></i></button>
+                        <button title="danh sách bảng" class="mr-1 ml-1 table-list"><i class="fa-solid fa-table-list" style="color: rgb(27, 36, 48);"></i></button>
+                        <button title="đường kẻ" class="mr-1 ml-1 line"><i class="fa-solid fa-grip-lines" style="color: rgb(27, 36, 48);"></i></button>
+                    </div>
+
+                    <div class="color inline-flex align-middle">
+                        <label title="màu đường kẻ" class="color-picker-btn" for="favcolor" style="background-color: #ff0000;"></label>
+                        <input title="màu đường kẻ" type="color" id="favcolor" value="#ff0000" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="ribbon-label">Bảng</div>
+            </div>
+
+            <div class="insert w-auto align-middle p-0">
+                <div class="inline-flex align-middle items-center h-full"> 
+                    <button class="flex flex-col items-center justify-center pr-2.5 pl-2.5 cursor-pointer">
+                        <i class="fa-solid fa-shapes text-3xl text-[#1b2430]"></i>
+                        <span class="label">Hình dạng</span>
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="picture w-auto align-middle p-0">
+                <div class="inline-flex align-middle items-center h-full"> 
+                    <button class="flex flex-col items-center justify-center pr-2.5 pl-2.5 cursor-pointer">
+                        <i class="fa-solid fa-image text-3xl" style="color: rgb(27, 36, 48);"></i>
+                        <span class="label">Hình dạng</span>
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pattern w-auto align-middle">
+                <div class="pattern-list h-[52.5px] w-[600px]"></div> 
+                <div class="ribbon-label mt-1">Hoa văn</div>
+            </div>
+        </div>
+
+        <!-- workspace -->
+        <div class="workspace">
+            <div class="a4" contenteditable="true">
+                Bôi đen một đoạn chữ bất kỳ rồi bấm nút\ ở trên để thử nghiệm...
+            </div>
+        </div>
+    </div>
+
+    <script src="/Portfocivi/SPCK-JSB14-QUANGMINH/js/cv.js"></script>
+</body>
+</html>

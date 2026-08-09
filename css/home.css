@@ -1,0 +1,1015 @@
+@import "tailwindcss";
+
+@layer base
+{
+    .fa-solid
+    {
+        margin-right: 5px;
+        height: auto;
+        width: auto;
+    }
+    .background
+    {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        padding: 0px;
+    }
+    li 
+    {
+        z-index: 9999;
+        height: 50px; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+        background-color: white;
+    }
+
+    li:hover 
+    {
+        color: red;
+    }
+
+    li:active 
+    {
+        color: rgba(255,0,0,0.6);
+    }
+}
+
+@layer components
+{
+    /* navbar */
+  .logo
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+    width: 100px;
+    height: 50px;  
+    transition: transform 0.2s ease;
+  }
+  .logo:hover 
+  {
+      transform: scale(1.05);
+  }
+  .user
+  {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: none;
+    height: 35px;  
+    width: 90px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255,0,0,0.2);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .user:hover 
+  {
+      background-color: #e60000;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 15px rgba(255,0,0,0.4);
+  }
+  .user:active 
+  {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px rgba(255,0,0,0.3);
+  }
+
+  /* slider */
+  .slider
+    {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(90deg,#f6f8f5,rgba(246,248,245,.98) 24%,rgba(246,248,245,.82) 46%,rgba(246,248,245,.28) 78%,rgba(246,248,245,.58)),linear-gradient(180deg,rgba(246,248,245,.42),rgba(246,248,245,.12) 55%,#f6f8f5), 
+        url(https://images.careerviet.vn/content/images/don-xin-viec-la-linh-hon-cua-bo-ho-so-careerbuilder.png); 
+        background-size: cover;
+        background-position: right center; 
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    .CV 
+    {
+        background-color: white;
+        border: 2px solid rgba(0,0,0,0.05);
+        padding: 7px 12px;
+        color: rgb(184, 33, 50);
+        border-radius: 5px;
+        border: 1.5px solid rgba(16, 35, 29, 0.12);
+        transition: all 0.2s ease;
+        cursor: default;
+    }
+
+    .CV:hover 
+    {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .Portfolio
+    {
+        background-color: white;
+        border: 2px solid rgba(0,0,0,0.05);
+        padding: 7px 12px;
+        color: rgb(184, 33, 50);
+        border-radius: 5px;
+        border: 1.5px solid rgba(16, 35, 29, 0.12);
+        transition: all 0.2s ease;
+        cursor: default;
+    }
+
+    .Portfolio:hover 
+    {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .title
+    {
+        height: 103.03px;
+        font-weight: 600;
+        font-stretch: 100%;
+        font-size: 46px;
+        margin-top: 20px 20px;
+    }
+
+    .intro
+    {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 30px 0 0;
+        color: rgba(0,0,0,0.65)
+    }
+
+    .CV-button
+    {
+        width: 189.98px;
+        height: 44px;
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 10px;
+        padding: 0 18px;
+        box-shadow: 0 5px 10px rgba(255,0,0,0.65);
+        transition: all 0.2s ease;
+    }
+
+    .CV-button:hover
+    {
+        background-color: rgba(255,0,0,0.75);
+        cursor: pointer;
+        transform: translateY(-2px);
+        box-shadow: 0 7px 14px rgba(255,0,0,0.8);
+    }
+
+    .CV-button:active 
+    {
+        transform: translateY(0);
+        box-shadow: 0 3px 6px rgba(255,0,0,0.65);
+    }
+
+    .Port-button
+    {
+        width: 226.45px;
+        height: 44px;
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 10px;
+        padding: 0 18px;
+        box-shadow: 0 5px 10px rgba(255,0,0,0.65);
+        transition: all 0.2s ease;
+    }
+
+    .Port-button:hover
+    {
+        background-color: rgba(255,0,0,0.75);
+        cursor: pointer;
+        transform: translateY(-2px);
+        box-shadow: 0 7px 14px rgba(255,0,0,0.8);
+    }
+
+    .Port-button:active 
+    {
+        transform: translateY(0);
+        box-shadow: 0 3px 6px rgba(255,0,0,0.65);
+    }
+
+    /* introduction */
+    .introduction
+    {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to bottom, #f6f8f5 0%, #ffd8dd 100%);
+    }
+
+    .tittle-about
+    {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .about-us
+    {
+        background-color: #ffa9b5;
+        color: red;
+        font-size: 20px;
+        text-decoration: center;
+        border-radius: 5px;
+        padding: 0 8px;
+        height: 50px;
+        width: 140px;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .about-us:hover
+    {
+        transform: scale(1.05);
+        background-color: #ff94a2;
+    }
+
+    .subtittle-about
+    {
+        color: black;
+        font-weight: bolder;
+        font-size: 45px;
+        text-decoration: center;
+        border-radius: 5px;
+        padding: 0 6px;
+        height: 40px;
+        width: 126px;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .subtittle-reason
+    {
+        color: red;
+        font-weight: bolder;
+        font-size: 45px;
+        border-radius: 5px;
+        height: 40px;
+        width: 154px;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .about
+    {
+        color: rgba(0,0,0,0.65);
+        margin: 0 100px;
+        padding: 0 100px;
+        font-size: 25px;
+        text-align: justify;
+    }
+
+    .details
+    {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 50px;
+        font-weight: bold;
+        margin: 50px 0;
+    }
+
+    .details .CV-image
+    {
+        width: 100%;
+        height: 278.11px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-image: url(https://tenten.vn/tin-tuc/wp-content/uploads/2022/02/anh-cv-2-4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .details .Port-image
+    {
+        width: 100%;
+        height: 278.11px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-image: url(https://cdn-talent-wp.arc.dev/wp-content/uploads/2021/08/Adham-Dannaway-home.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .details .CV-details
+    {
+        display: block;
+        font-size: 26px;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        width: 500px;
+        height: 468px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .details .CV-details:hover
+    {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .details .CV-details:hover #CV-image
+    {
+        transform: scale(1.03);
+    }
+
+    .details .Port-details
+    {
+        display: block;
+        font-size: 26px;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        width: 500px;
+        height: 468px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .details .Port-details:hover
+    {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .details .Port-details:hover .Port-image
+    {
+        transform: scale(1.03);
+    }
+
+    .details .more
+    {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px;
+        padding-left: 0;
+        cursor: pointer;
+    }
+
+    .details .details-des
+    {
+        padding: 20px;
+    }
+
+    .details .button-detail
+    {
+        background-color: red;
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .details .more:hover .button-detail
+    {
+        background-color: #cc0000;
+        transform: scale(1.05);
+    }
+
+    .details .watch-more
+    {
+        font-size: 20px;
+        transition: color 0.2s ease;
+    }
+
+    .details .more:hover .watch-more
+    {
+        color: red;
+    }
+
+    .reason
+    {
+        color: rgba(255,0,0,0.65);
+        padding: auto;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* core values */
+    .core-values 
+    {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: auto;
+        padding: 75px 20px 75px 20px;
+        background: linear-gradient(180deg,var(--token-38690221-9002-4fa8-8056-2c34ffb7dc32,#ff323a)57.2072%,#ff5833 100%);
+    }
+
+    .heading
+    {
+        color: white;
+        font-size: 55px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+
+    .list-values
+    {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .list-values li
+    {
+        display: block;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Thay bóng đen kịt bằng bóng đổ mờ mịn màng hơn */
+        background-color: white;
+        border-radius: 10px;
+        width: 325px;
+        height: auto;
+        padding: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động mượt */
+    }
+
+    .list-values li:hover
+    {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+    }
+
+    .brand .tittle
+    {
+        font-size: 22px;
+        text-align: center;
+        gap: 10px;
+        height: auto;
+        margin: 0;
+    }
+
+    .brand .para
+    {
+        margin-top: 10px;
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    /* turtorial */
+    .turtorial
+    {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to bottom, #ffd8dd 0%, #f6f8f5 100%);
+    }
+
+    .tittle
+    {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .Turtorial
+    {
+        background-color: #ffa9b5;
+        color: red;
+        font-size: 20px;
+        text-decoration: center;
+        border-radius: 5px;
+        padding: 0 8px;
+        margin: 0 5px;
+        height: 50px;
+        width: auto;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .Turtorial:hover
+    {
+        transform: scale(1.05);
+        background-color: #ff94a2;
+    }
+
+    .Turto
+    {
+        color: black;
+        font-weight: bolder;
+        font-size: 45px;
+        text-decoration: center;
+        border-radius: 5px;
+        padding: 0 5px;
+        height: 40px;
+        width: auto;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rial
+    {
+        color: red;
+        font-weight: bolder;
+        font-size: 45px;
+        border-radius: 5px;
+        height: 40px;
+        padding: 0 5px;
+        width: auto;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+    }
+
+     .tur-CV, .tur-Port 
+    {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: flex-start;       
+        width: auto;
+        gap: 25px;  
+        margin: 20px 0;
+        padding: 10px;
+        border: none;         
+        background: none;    
+    }
+
+    .tittle-CV
+    {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important; 
+        align-items: center;
+        width: auto;  
+        height: auto;
+    }
+
+    .cách-tạo
+    {
+        color: red;
+        font-weight: bolder;
+        font-size: 35px;
+        white-space: nowrap;         
+        padding: 10px;          
+    }
+
+    .cách-tạo-CV, .cách-tạo-Port
+    {
+        color: black;
+        font-weight: bolder;
+        font-size: 35px;
+        width: auto;
+        white-space: nowrap;         
+    }
+
+    .tur-CV p, .tur-Port p 
+    {
+        color: rgba(0,0,0,0.65);
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.6;
+        width: auto; 
+    }
+
+    .tur-CV .CV-button, .tur-Port .Port-button 
+    {
+        display: block;         
+        width: 189.98px;
+        height: 44px;
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tur-CV .CV-button:hover, .tur-Port .Port-button:hover
+    {
+        background-color: #cc0000;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255,0,0,0.5);
+    }
+
+    .tur-CV .CV-button:active, .tur-Port .Port-button:active
+    {
+        transform: translateY(0);
+        box-shadow: 0 4px 10px rgba(255,0,0,0.3);
+    }
+
+    .tur-CV .video-turtorial-CV, .tur-Port .video-turtorial-Port 
+    {
+        background-color: white;
+        box-shadow: rgba(0,0,0,0.1) 0px 4px 20px;
+        width: 750px;    
+        height: 500px;     
+        border-radius: 15px;
+        flex-shrink: 0;                 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tur-CV .video-turtorial-CV:hover, .tur-Port .video-turtorial-Port:hover
+    {
+        transform: translateY(-4px);
+        box-shadow: rgba(0,0,0,0.15) 0px 8px 30px;
+    }
+
+    /* templates */
+    .template
+    {
+        position: relative;
+        top: 0px;
+        background-color: rgb(246, 248, 245);
+        width: 100%;
+        height: auto;
+        padding: 0 50px;
+    }
+
+    .tittle
+    {
+        color: black;
+        font-weight: bolder;
+        font-size: 45px;
+        text-decoration: center;
+        border-radius: 5px;
+        padding: 0 6px;
+        height: 40px;
+        width: 250px;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .template ul
+    {
+        display: grid;
+        grid-template-columns: repeat(7, 120px); 
+        justify-content: center; 
+        justify-items: center;   
+        grid-gap: 30px 30px;     
+        padding: 0;              
+        list-style: none;        
+    }
+
+    .template ul li
+    {
+        background-color: rgb(246, 248, 245);
+        display: flex;
+        flex-direction: column;  
+        align-items: center;     
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .template ul li::before
+    {
+        content: "";
+        display: flex;
+        width: 80px;
+        height: 80px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 16px 0px; 
+        border-radius: 8px;
+        margin-bottom: 12px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 45px 45px;
+        transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .template ul li:hover::before
+    {
+        transform: translateY(-6px);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+    }
+
+    .template ul li:active::before
+    {
+        transform: translateY(-2px);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px 0px;
+    }
+
+    .template ul li::after
+    {
+        font-size: 14px;         
+        font-weight: 600;        
+        color: #333333;          
+        text-align: center;      
+        white-space: normal;
+        line-height: 1.3;
+        transition: color 0.2s ease;
+    }
+
+    .template ul li:hover::after
+    {
+        color: red;
+    }
+
+    .IT::before { background-image: url('https://cdn-icons-png.flaticon.com/512/4370/4370773.png'); }
+    .IT::after { content: "IT"; }
+
+    .programmer::before { background-image: url('https://cdn-icons-png.flaticon.com/512/10771/10771017.png'); }
+    .programmer::after { content: "Programmer"; }
+
+    .UX-UI::before { background-image: url('https://cdn-icons-png.flaticon.com/512/8448/8448634.png'); } 
+    .UX-UI::after { content: "UX/UI"; }
+
+    .tester::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_MXVK_tO_FUO8gZuvIMDlO5siHaXYFu0CUA&s'); }
+    .tester::after { content: "Tester"; }
+
+    .sysadmin::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtx9BoHw4_rbEqVyz-UCZb_oAX_M7javd3yQ&s'); }
+    .sysadmin::after { content: "Sysadmin"; }
+
+    .data-analyst::before { background-image: url('https://cdn-icons-png.flaticon.com/512/5726/5726778.png'); }
+    .data-analyst::after { content: "Data Analyst"; }
+
+    .cybersecurity::before { background-image: url('https://cdn-icons-png.flaticon.com/512/10961/10961311.png'); }
+    .cybersecurity::after { content: "Cybersecurity"; }
+
+    /* Hàng 2 */
+    .technique::before { background-image: url('https://cdn-icons-png.flaticon.com/512/18534/18534554.png'); }
+    .technique::after { content: "Technique"; }
+
+    .engineer::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAFA76q5ft-pwrcAUCnl9c2UFseyWxrNUZTw&s'); }
+    .engineer::after { content: "Engineer"; }
+
+    .elec-engineer::before { background-image: url('https://cdn-icons-png.flaticon.com/512/4258/4258005.png'); }
+    .elec-engineer::after { content: "Elec Engineer"; }
+
+    .electronic-engineer::before { background-image: url('https://cdn-icons-png.flaticon.com/512/4635/4635385.png'); }
+    .electronic-engineer::after { content: "Electronic Engineer"; }
+
+    .mecha-engineer::before { background-image: url('https://cdn-icons-png.flaticon.com/512/18133/18133492.png'); }
+    .mecha-engineer::after { content: "Mecha Engineer"; }
+
+    .envi-engineer::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLlGr34HAyRTCUYO45UPPv5J6Rg4B30wcbCQ&s'); }
+    .envi-engineer::after { content: "Envi Engineer"; }
+
+    .media::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDyA2-GRzOyMsGdoJfuJZKpAlyGhjr0tTWKw&s'); }
+    .media::after { content: "Media"; }
+
+    /* Hàng 3 */
+    .marketing::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFNWf8GPiW-7mnKfJwJqBlL7QIa4sVeE0iUA&s'); }
+    .marketing::after { content: "Marketing"; }
+
+    .market-research::before { background-image: url('https://cdn-icons-png.flaticon.com/512/9321/9321684.png'); }
+    .market-research::after { content: "Market Research"; }
+
+    .strategizing::before { background-image: url('https://cdn-icons-png.flaticon.com/512/6102/6102366.png'); }
+    .strategizing::after { content: "Strategizing"; }
+
+    .implementation::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDgoT97oLWi-np59qKz2Rxghiz_YGupUoNQ&s'); }
+    .implementation::after { content: "Implementation"; }
+
+    .adjust::before { background-image: url('https://cdn-icons-png.flaticon.com/512/10229/10229249.png'); }
+    .adjust::after { content: "Adjust"; }
+
+    .police::before { background-image: url('https://cdn-icons-png.flaticon.com/512/10295/10295611.png'); }
+    .police::after { content: "Police"; }
+
+    .army::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdjimjvSdHyIqt7xtmhVfulVxOfjDpboRjyQ&s'); }
+    .army::after { content: "Army"; }
+
+    /* Hàng 4 */
+    .agriculture::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEwFkheRk0Z4v34ihGaSbHY2_Jo_BAvzevg&s'); }
+    .agriculture::after { content: "Agriculture"; }
+
+    .forestry::before { background-image: url('https://cdn-icons-png.flaticon.com/512/7514/7514086.png'); }
+    .forestry::after { content: "Forestry"; }
+
+    .fishery::before { background-image: url('https://cdn-icons-png.flaticon.com/512/4090/4090619.png'); }
+    .fishery::after { content: "Fishery"; }
+
+    .education::before { background-image: url('https://cdn-icons-png.flaticon.com/512/3197/3197967.png'); }
+    .education::after { content: "Education"; }
+
+    .artistic::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlPfIOq008OWfD9IMAoaKPdRuicEpN8ZWQGg&s'); }
+    .artistic::after { content: "Artistic"; }
+
+    .economy::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Wxw6LreEzraJKlZApNiQfEefjhwzhYA3vA&s'); }
+    .economy::after { content: "Economy"; }
+
+    .medicine::before { background-image: url('https://cdn-icons-png.flaticon.com/512/4022/4022533.png'); }
+    .medicine::after { content: "Medicine"; }
+
+    .button
+    {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 42.5px;
+        margin-bottom: 42.5px;
+    }
+
+    .other-job
+    {
+        width: 250px;
+        height: 50px;
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+        border: none;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 0 18px;
+        box-shadow: 0 5px 10px rgba(255,0,0,0.65);
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+
+    .other-job:hover
+    {
+        background-color: #cc0000;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(255,0,0,0.5);
+    }
+
+    .other-job:active
+    {
+        transform: translateY(0);
+        box-shadow: 0 4px 10px rgba(255,0,0,0.3);
+    }
+
+    /* footer */
+    footer 
+    {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        min-height: 400px;
+        background-color: #1c1d21;
+        color: #ffffff;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+
+    .footer-container 
+    {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px 30px 20px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .footer-top 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo-section 
+    {
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .logo 
+    {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin: 0 0 15px 10px;
+        color: #ffffff;
+    }
+
+    .logo-section p 
+    {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #a0a5b5;
+        margin: 0;
+    }
+
+    .links-section 
+    {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        min-width: 300px;
+    }
+
+    .footer-column 
+    {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 140px;
+    }
+
+    .footer-column .column-title 
+    {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .footer-column li 
+    {
+        height: auto;
+        margin-bottom: 12px;
+        background-color: #1c1d21;
+    }
+
+    .footer-column li a 
+    {
+        font-size: 14px;
+        color: #a0a5b5;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-column li a:hover 
+    {
+        color: #ff323a;
+    }
+
+    .footer-bottom 
+    {
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .copy-right 
+    {
+        font-size: 13px;
+        color: #707585;
+    }
+
+}

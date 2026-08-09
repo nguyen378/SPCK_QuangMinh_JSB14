@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/Portfocivi/SPCK-JSB14-QUANGMINH/css/home.css">
+  </head>
+  <body>
+    <!-- navbar  -->
+    <header class="">
+        <nav class="background flex justify-between items-center w-full">
+            <div class="logo">Portfolio</div>
+            <div class="nav-links w-full sm:static absolute pr-0 pl-0 sm:min-h-fit min-h-[25vh] left-0 top-[-100%] sm:w-full flex justify-center items-center px-5">
+            <ul class="flex sm:justify-center w-full max-sm:bg-white sm:flex-row flex-col sm:items-center sm:gap-[4vw]">
+                <li class=""><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class=""><a href="#"><i class="fa-solid fa-circle-info"></i>Info</a></li>
+                <li class=""><a href="#"><i class="fa-solid fa-diagram-project"></i>Template</a></li>
+                <li class=""><a href="#"><i class="fa-solid fa-address-book"></i>Contact</a></li>
+            </ul>
+            </div>
+            <div class="flex items-center gap-1 w-auto">
+            <a href="signin.html"><button class="user">Sign in</button></a>
+            <i class="menuToggleBtn w-auto fa-solid fa-bars text-3xl cursor-pointer mr-6 sm:hidden" 
+            style="color: rgb(30, 48, 80);"
+            role="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex flex-wrap h-auto gap-0">   
+        <!-- slider -->  
+        <div class="slider w-full h-auto">
+            <div class="m-[20px] w-auto sm:w-[600px] sm:ml-[75px] sm:mt-[70px] lg:ml-[178px] lg:mt-[124px]">
+                <div class="sm:inline-flex">
+                    <div class="CV w-[234px] m-[10px] sm:m-[10px] sm:w-[190px]">Tạo CV chuyên nghiệp</div>
+                    <div class="Portfolio w-[234px] m-[10px] sm:m-[10px] sm:w-[234px]">Tạo Portfolio chuyên nghiệp</div>
+                </div>
+
+                <h1 class="leading-[1.1] text-[38px] sm:text-[43px] md:text-[50px] w-auto sm:w-[560px] ml-[10px] mr-[10px] mt-[25px] mb-[25px] font-medium sm:title">Tạo CV, Portfolio chuyên nghiệp trong vài phút</h1>
+                <p  class="ml-[10px] mr-[10px] mt-[25px] mb-[25px] sm:w-[500px] text-[15px] text-[rgba(0,0,0,0.65)] sm:intro">Chọn một mẫu phù hợp để chỉnh sửa, điền nội dung và tải xuống bản CV và Portfolio sẵn sàng gửi nhà tuyển dụng.</p>
+                
+                <a href="cv.html">
+                    <button class="CV-button w-[95%] sm:w-[189.98px]">
+                    <i class="fa-solid fa-plus"></i>
+                    Chọn mẫu CV
+                    </button>
+                </a>
+                <a href="PORTbuilder.html">
+                    <button class="Port-button w-[95%] sm:w-[226.65px]">
+                    <i class="fa-solid fa-plus"></i>
+                    Chọn mẫu Portfolio
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- introduction -->
+        <div class="introduction w-full h-auto">
+            <div class="tittle-about max-sm:m-0">
+                <div class="about-us max-sm:text-[15px]">Về chúng tôi</div>
+                <div class="subtittle-about max-sm:text-[34px]">Lý do</div>
+                <div class="subtittle-reason max-sm:text-[34px]">ra đời?</div>
+            </div>
+
+            <p class="about max-sm:text-[15px] max-sm:m-0 max-sm:pr-[20px] max-sm:pl-[20px] max-sm:pt-0 max-sm:pb-0px max-md:text-[20px] max-md:m-0 max-md:pr-[50px] max-md:pl-[50px] max-md:pt-0 max-md:pb-0px">Chúng tôi nhận ra rằng người đi làm và các bạn học sinh/sinh viên thường mất quá nhiều thời gian để vừa thiết kế một bản CV giấy để in, lại vừa phải tạo một trang Portfolio online để gửi link. Việc quản lý nội dung và màu sắc giữa 2 nền tảng này thường bị lệch lạc, mất đi tính đồng bộ cá nhân.</p>
+            
+            <ul class="details h-auto flex-wrap sm:flex-wrap max-sm:m-0 max-sm:p-[20px] md:flex-wrap md:m-0 md:p-[20px]">
+                <li class="CV-details h-auto">
+                    <div class="CV-image"></div>
+                    <div class="details-des">
+                        <div class="detail">Làm CV chuyên nghiệp, đầy thuyết phục nhà tuyển dụng</div>
+                        <div class="more">
+                            <button class="button-detail"><i class="fa-solid fa-arrow-right"></i></button>
+                            <div class="watch-more">Xem chi tiết</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="Port-details h-auto">
+                    <div class="Port-image"></div>
+                    <div class="details-des">
+                        <div class="detail">Làm Portfolio chuyên nghiệp, thuyết phục nhà tuyển dụng</div>
+                        <div class="more">
+                            <button class="button-detail"><i class="fa-solid fa-arrow-right"></i></button>
+                            <div class="watch-more">Xem chi tiết</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="h-auto w-auto p-[20px]">
+                <p class="reason max-sm:text-[20px] max-md:text-[30px]">Đó là lý do Portfocivi ra đời – một công cụ tối giản giúp bạn đồng nhất bộ nhận diện sự nghiệp của mình chỉ qua vài thao tác chỉnh sửa cơ bản.</p>
+            </div>
+        </div>
+
+        <!-- core values -->
+        <div class="core-values w-full h-auto">
+            <div class="heading text-[50px]">Giá trị cốt lõi</div>
+
+            <ul class="list-values flex-wrap m-0 gap-[20px] sm:flex-wrap">
+                <li class="brand">
+                    <h3 class="tittle"><i class="fa-solid fa-clock"></i>Đồng bộ thời gian</h3>
+                    <p class="para">Thay đổi thông tin ở một nơi, cả CV và Portfolio trực tuyến sẽ tự động cập nhật ngay lập tức.</p>
+                </li>
+                <li class="brand">
+                    <h3 class="tittle"><i class="fa-solid fa-address-book"></i>Bản sắc cá nhân</h3>
+                    <p class="para">Thay đổi màu sắc, phông chữ chủ đạo đồng loạt cho cả 2 bản thiết kế chỉ với 1 cú click.</p>
+                </li>
+                <li class="brand">
+                    <h3 class="tittle"><i class="fa-solid fa-print"></i>Chuẩn in & số hóa</h3>
+                    <p class="para">CV được tối ưu kích thước A4 để xuất file PDF sắc nét, trong khi Portfolio được thiết kế cuộn trang hiện đại, mượt mà trên mọi thiết bị.</p>
+                </li>
+                <li class="brand">
+                    <h3 class="tittle"><i class="fa-solid fa-eye-slash"></i>Bảo mật tuyệt đối</h3>
+                    <p class="para">Dữ liệu của bạn được lưu trực tiếp trên trình duyệt cá nhân, chúng tôi hoàn toàn không thu thập hay lưu trữ thông tin của bạn trên máy chủ.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- turtorial -->
+        <div class="turtorial p-[10px]">
+            <div class="tittle h-auto p-0">
+                <div class="Turtorial text-[20px] max-sm:text-[15px] sm:text-[23px] md:text-[27px]">Turtorial</div>
+                <div class="Turto w-auto max-sm:text-[17px] sm:text-[23px] md:text-[30px]">Hướng dẫn</div>
+                <div class="rial w-auto max-sm:text-[17px] sm:text-[23px] md:text-[30px]">cách dùng</div>
+            </div>
+
+            <div class="tur-CV flex max-lg:flex-wrap lg:inline-flex lg:flex-row lg:justify-center">
+                <div class="content w-auto h-auto">
+                    <div class="tittle-CV">
+                        <div class="cách-tạo text-[20px] sm:text-[25px] md:text-[30px]">Cách tạo</div>
+                        <div class="cách-tạo-CV text-[20px] sm:text-[25px] md:text-[30px]">CV</div>
+                    </div>
+                    <p class="text-[15px] p-[10px]">Đầu tiên, chúng ta sẽ đến với tính năng thiết kế CV chuyên nghiệp. Điểm đặc biệt của trang web là hệ thống tối ưu hóa hoàn toàn theo chuẩn khổ giấy A4 quốc tế. Ngay khi bạn nhập thông tin cá nhân, kinh nghiệm làm việc hay kỹ năng vào bảng điều khiển bên trái, nội dung sẽ lập tức hiển thị trực quan ở khung bên phải theo thời gian thực. Bạn không cần phải lo lắng về việc căn chỉnh lề, lỗi phông chữ hay tràn dòng, vì hệ thống đã tự động tính toán khoảng cách chuẩn xác nhất. Sau khi hoàn thiện, chỉ với một cú click vào nút 'Xuất file PDF', bạn sẽ có ngay một bản CV sắc nét, sẵn sàng mang đi in ấn hoặc đính kèm vào email gửi tới các nhà tuyển dụng.</p>
+                    <button class="CV-button">Bắt đầu làm</button>
+                </div>
+                <div class="video-turtorial-CV w-[315px] h-[220px] sm:w-[550px] sm:h-[330px] lg:w-[700px] lg:h-[450px] xl:w-[750px] xl:h-[500px]"></div>
+            </div>
+
+            <div class="tur-Port flex max-lg:flex-wrap lg:inline-flex lg:flex-row lg:justify-center">
+                <div class="video-turtorial-Port w-[315px] h-[220px] sm:w-[550px] sm:h-[330px] lg:w-[700px] lg:h-[450px] xl:w-[750px] xl:h-[500px]"></div>
+                <div class="content w-auto h-auto">
+                    <div class="tittle-CV">
+                        <div class="cách-tạo text-[20px] sm:text-[25px] md:text-[30px]">Cách tạo</div>
+                        <div class="cách-tạo-Port text-[20px] sm:text-[25px] md:text-[30px]">Portfolio</div>
+                    </div>
+                    <p class="text-[15px] p-[10px]">Bên cạnh bản CV truyền thống, trang web còn tự động đồng bộ toàn bộ dữ liệu bạn vừa nhập sang một giao diện Portfolio trực tuyến vô cùng hiện đại. Chức năng này giúp số hóa hồ sơ năng lực của bạn thành một trang web cá nhân riêng biệt, sở hữu hiệu ứng cuộn trang mượt mà và tương thích hoàn hảo trên cả máy tính lẫn điện thoại. Tại đây, bạn có thể dễ dàng thay đổi màu sắc chủ đạo, phông chữ toàn cục hay cập nhật hình ảnh dự án lớn chỉ bằng vài thao tác cơ bản. Thay vì gửi một file tài liệu nhàm chán, giờ đây bạn chỉ cần gửi một đường link Portfolio duy nhất để tự tin phô diễn tư duy sáng tạo và thuyết phục nhà tuyển dụng ngay từ cái nhìn đầu tiên.</p>
+                    <button class="Port-button">Bắt đầu làm</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- templates -->
+        <div class="template mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+
+            <div class="tittle text-lg sm:text-[25px] md:text-[35px] lg:text-[45px] font-bold text-center mb-5 sm:mb-6 md:mb-8 text-gray-800">
+                Chọn một nghề để bắt đầu làm CV và portfolio
+            </div>
+
+            <ul class="job-list grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-0">
+
+                <li class="IT flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="programmer flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="UX-UI flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="tester flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="sysadmin flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="data-analyst flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="cybersecurity flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="technique flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="engineer flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="elec-engineer flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="electronic-engineer flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="mecha-engineer flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="envi-engineer flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="media flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="marketing flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="market-research flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="strategizing flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="implementation flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="adjust flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="police flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="army flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="agriculture flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="forestry flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="fishery flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="education flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="artistic flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="economy flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+                <li class="medicine flex flex-col items-center justify-center gap-2 p-3 sm:p-4 transition cursor-pointer">
+                    
+                </li>
+            </ul>
+
+            <div class="button flex justify-center mt-6 sm:mt-8">
+                <button class="other-job px-5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-white text-sm sm:text-base font-medium transition">
+                    Nghề khác
+                </button>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="logo-section">
+                        <div class="logo">Portfolio</div>
+                        <p>Nền tảng tạo CV và Portfolio trực tuyến chuyên nghiệp, giúp bạn định hình thương hiệu cá nhân và bứt phá sự nghiệp.</p>
+                    </div>
+                    
+                    <div class="links-section">
+                        <ul class="footer-column" class="about">
+                            <li class="column-title">Về chúng tôi</li>
+                            <li><a href="#">Câu chuyện</a></li>
+                            <li><a href="#">Tính năng</a></li>
+                            <li><a href="#">Bảo mật</a></li>
+                        </ul>
+                        
+                        <ul class="footer-column" class="Service">
+                            <li class="column-title">Dịch vụ</li>
+                            <li><a href="#">Tạo CV</a></li>
+                            <li><a href="#">Tạo Portfolio</a></li>
+                            <li><a href="#">Mẫu giao diện</a></li>
+                        </ul>
+                        
+                        <ul class="footer-column" class="Community">
+                            <li class="column-title">Cộng đồng</li>
+                            <li><a href="#">Hướng dẫn</a></li>
+                            <li><a href="#">Hỗ trợ</a></li>
+                            <li><a href="#">Đóng góp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <span class="copy-right">© 2026 Portfolio. Bảo lưu mọi quyền.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+
+    <script>
+        const navLinks = document.querySelector(".nav-links");
+        const menuToggleBtn = document.querySelector(".menuToggleBtn");
+
+        function onToggleMenu(icon) 
+        {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+
+            const isOpen = navLinks.classList.contains("top-[-100%]");
+
+            if (isOpen)
+            {
+                navLinks.classList.remove("top-[-100%]");
+                navLinks.classList.add("top-[50px]");
+            } 
+            else 
+            {
+                navLinks.classList.remove("top-[50px]");
+                navLinks.classList.add("top-[-100%]");
+            }
+
+            icon.setAttribute("aria-expanded", !isOpen);
+        }
+
+        menuToggleBtn.addEventListener("click", () => onToggleMenu(menuToggleBtn));
+    </script>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>
